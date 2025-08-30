@@ -1,35 +1,55 @@
-#[allow(dead_code)]
-mod model {
-   pub  struct User {
-      pub   first_name: String,
-      pub  last_name: String,
-      pub  username: String,
-      pub  email: String,
-      pub  age: u8,
-    }
+pub mod first;
+pub mod second;
+pub mod third;
+pub mod model;
 
- #[allow(dead_code)]
-impl User {
- pub  fn say_hello(&self, name:&str){
-        println!("Hello {}, my name is {}", name, self.first_name)
-    }
-}
-}
+#[allow(unused_imports)]
+use first::say_hello;
+
+#[allow(unused_imports)]
+use second::say_hello as say_hello_second;
+
 
 #[test]
-fn test_module() {
-    let user: model::User = model::User{
-        first_name: String::from("Rido"),
-        last_name: String::from("Sihombing"),
-        username: String::from("idoow"),
-        email: String::from("idoow@gmail.com"),
-        age: 21,
-
-    };
-
-    user.say_hello("Messi")
+fn test_use() {
+    say_hello();
+    say_hello_second();
+   
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// use model::User;
 
 fn main() {
     println!("Hello, world!");
@@ -401,14 +421,14 @@ fn loop_label() {
  }
 
 #[allow(dead_code)]
-fn say_hello(name: &str) {
+fn say_hello1(name: &str) {
     println!("Hello, {}!", name);
 }
 
 #[test]
 fn main2() {
-    say_hello("Rido");
-    say_hello("Gracia");
+    say_hello1("Rido");
+    say_hello1("Gracia");
 }
 
 #[allow(dead_code)]
